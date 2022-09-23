@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = (props) => {
   const [credentials, setCredentials] = useState({
@@ -35,7 +35,7 @@ const Signup = (props) => {
     // redirect
     if(json.success){
 
-      localStorage.setItem("token", json.authtoken);
+      localStorage.setItem("token", json.authToken);
       navigate("/");
       props.showAlert("Account Created Successfully","success")
 
@@ -101,10 +101,12 @@ const Signup = (props) => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit"  className="btn btn-primary">
           Submit
         </button>
       </form>
+      <Link class="btn btn-info my-3" to="/login" role="button">Already have an account</Link>
+
     </div>
   );
 };

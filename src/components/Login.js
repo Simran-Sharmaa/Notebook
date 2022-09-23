@@ -31,7 +31,7 @@ const Login = (props) => {
       // redirect
       localStorage.setItem("token", json.authtoken);
      navigate("/");
-     props.showAlert("Account Created Successfully","success")
+     props.showAlert("Logged in Successfully","success")
 
     } else {
       props.showAlert("Invalid Details","danger")
